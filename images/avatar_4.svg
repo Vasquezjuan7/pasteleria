@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <circle cx="50" cy="50" r="50" fill="#E0F2F1"/>
+  <circle cx="50" cy="40" r="16" fill="#FFCCBC"/>
+  <!-- hair with bun -->
+  <circle cx="50" cy="18" r="8" fill="#3E2723"/>
+  <path d="M 32 36 C 32 20 68 20 68 36 C 68 45 62 48 58 48 C 54 48 50 42 42 42 C 34 42 32 45 32 36 Z" fill="#3E2723"/>
+  <circle cx="45" cy="40" r="2" fill="#212121"/>
+  <circle cx="55" cy="40" r="2" fill="#212121"/>
+  <path d="M 46 47 Q 50 51 54 47" stroke="#00897B" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M 22 88 C 24 68 36 62 50 62 C 64 62 76 68 78 88 Z" fill="#00897B"/>
+</svg>

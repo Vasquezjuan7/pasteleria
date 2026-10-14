@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dakingo - Your Trusted FSSAI Certified Online Bakery</title>
+  <meta name="description" content="Order freshly baked gourmet cakes, decadent chocolate bliss, cupcakes, and party desserts online from Dakingo. Fast delivery across the country.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/hero_chocolate_cake.jpg" type="image/jpeg">
+</head>
+<body>
+
+  <!-- Main Application Container -->
+  <main class="app-container" id="mainApp">
+
+    <!-- ==========================================
+         SITE HEADER & TOP NAVIGATION
+         ========================================== -->
+    <header class="site-header">
+      <div class="header-top">
+        <!-- Logo -->
+        <a href="#" class="brand-logo" id="logoLink" aria-label="Dakingo Home">
+          <span class="brand-name">Dakingo</span>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="header-search">
+          <div class="search-pill">
+            <span class="search-icon-left" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search" aria-label="Search cakes and desserts">
+            <button class="search-submit-btn" id="searchSubmitBtn" aria-label="Submit Search">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- User Actions: Cart & Login -->
+        <div class="header-actions">
+          <button class="cart-btn" id="openCartBtn" aria-label="Open Shopping Cart">
+            <svg class="cart-icon-svg" viewBox="0 0 24 24">
+              <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+            <span class="cart-badge" id="cartCountBadge">0</span>
+          </button>
+          <a href="javascript:void(0)" class="login-link" id="loginModalTrigger">Login/Signup</a>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="header-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li class="nav-item active"><a href="#cakes" data-category="all">Cakes</a></li>
+          <li class="nav-item"><a href="#theme-cakes" data-category="classic">Theme Cakes</a></li>
+          <li class="nav-item"><a href="#desserts" data-category="desserts">Desserts</a></li>
+          <li class="nav-item"><a href="#birthday" data-category="classic">Birthday</a></li>
+          <li class="nav-item"><a href="#hampers" data-category="gourmet">Hampers</a></li>
+          <li class="nav-item"><a href="#anniversary" data-category="gourmet">Anniversary</a></li>
+          <li class="nav-item"><a href="#occasions" data-category="all">Occasions</a></li>
+          <li class="nav-item"><a href="#occasions-special" data-category="cookies">Occasions</a></li>
+        </ul>
+        <button class="order-now-btn" id="orderNowHeaderBtn">ORDER NOW</button>
+      </nav>
+    </header>
+
+    <!-- ==========================================
+         HERO SECTION (Decadent Chocolate Bliss)
+         ========================================== -->
+    <section class="hero-banner" id="heroSection">
+      <!-- Main Circular Cake Left -->
+      <div class="hero-cake-main-wrap">
+        <div class="hero-cake-main" title="Decadent Chocolate Truffle Cake">
+          <img src="images/hero_chocolate_cake.jpg" alt="Decadent Chocolate Cake with fresh strawberries and glossy ganache" id="heroMainCakeImg">
+        </div>
+      </div>
+
+      <!-- Center Headline and Special Offer -->
+      <div class="hero-content">
+        <h1 class="hero-title">
+          DECADENT<br>
+          CHOCOLATE<br>
+          BLISS!
+        </h1>
+        <div class="hero-flourish">
+          <span>Satisfy Your Sweetest Cravings</span>
+          <svg viewBox="0 0 50 14">
+            <path d="M 0 7 Q 15 1 25 7 T 50 7" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="hero-offer-badge-wrap" id="promoOfferPill" title="Click to copy 20% discount coupon!">
+          <span class="offer-label">Special Offer!</span>
+          <div class="offer-badge">
+            <span>SAVE 20%</span>
+            <span class="copy-hint" id="promoCopyHint">USE: BLISS20</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right 2 Stacked Circular Cakes -->
+      <div class="hero-cake-stack">
+        <div class="hero-cake-thumb" title="Molten Chocolate Lava Cake" onclick="window.dakingoApp.quickViewItem(5)">
+          <img src="images/hero_lava_cake.jpg" alt="Molten Chocolate Lava Cake with warm chocolate fudge">
+        </div>
+        <div class="hero-cake-thumb" title="Decadent Layered Brownie Slice" onclick="window.dakingoApp.quickViewItem(6)">
+          <img src="images/hero_brownie_slice.jpg" alt="Rich layered chocolate truffle brownie cake slice">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         MENU SECTION & CATEGORY BUTTONS
+         ========================================== -->
+    <section class="menu-section" id="menuSection">
+      <div class="menu-flex-row">
+        <!-- Left: Menu Title, Subtitle, Mini Icons -->
+        <div class="menu-left-block">
+          <h2 class="menu-heading">Menu</h2>
+          <p class="menu-subheading">What will you wish for?</p>
+          <div class="menu-mini-icons">
+            <span class="mini-icon-circle" title="Celebration Cakes">🎂</span>
+            <span class="mini-icon-circle" title="Chef Specialties">🧁</span>
+            <span class="mini-icon-circle" title="Pastries">🍰</span>
+          </div>
+        </div>
+
+        <!-- Right: 4 Category Cards in the same row -->
+        <div class="category-cards-row">
+          <!-- Classic -->
+          <div class="category-card active" data-category="classic" id="catClassic">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 6a2 2 0 0 0 2-2c0-.38-.1-.73-.29-1.03l-.06-.1A1.97 1.97 0 0 0 12 2a2 2 0 0 0-1.65.87l-.06.1c-.19.3-.29.65-.29 1.03 0 1.1.9 2 2 2zm6 3h-1V8c0-.55-.45-1-1-1H8c-.55 0-1 .45-1 1v1H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2zm0 11H6v-3h12v3zm0-5H6v-4h12v4z"/>
+              </svg>
+            </div>
+            <span class="category-name">CLASSIC</span>
+          </div>
+
+          <!-- Gourmet -->
+          <div class="category-card" data-category="gourmet" id="catGourmet">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z"/>
+              </svg>
+            </div>
+            <span class="category-name">GOURMET</span>
+          </div>
+
+          <!-- Desserts -->
+          <div class="category-card" data-category="desserts" id="catDesserts">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+              </svg>
+            </div>
+            <span class="category-name">DESSERTS</span>
+          </div>
+
+          <!-- Cookies -->
+          <div class="category-card" data-category="cookies" id="catCookies">
+            <div class="category-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21.5 10.65c-.14-.05-.29-.08-.45-.08-.83 0-1.5.67-1.5 1.5 0 .28.08.53.21.75-.41.36-.93.6-1.51.65-.12-1.22-1.12-2.17-2.35-2.17-.67 0-1.28.27-1.72.71-.34-.14-.72-.21-1.11-.21-1.66 0-3 1.34-3 3 0 .42.09.81.24 1.17C7.45 16.58 5.4 14.54 5.07 12c1.47-.28 2.62-1.53 2.68-3.07.72.33 1.51.52 2.35.52 3.11 0 5.66-2.37 5.9-5.45.69.19 1.42.3 2.18.3 1.09 0 2.11-.23 3.03-.66.83 2.08 1.18 4.41.29 6.96zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-.34-.02-.67-.06-1-.31.06-.63.1-.94.1-1.66 0-3-1.34-3-3 0-.34.06-.66.16-.96C17.06 7.41 16 6.08 16 4.5c0-.62.19-1.2.51-1.69C15.11 2.29 13.6 2 12 2z"/>
+              </svg>
+            </div>
+            <span class="category-name">COOKIES</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BESTSELLERS FROM ACROSS THE COUNTRY
+         ========================================== -->
+    <section class="bestsellers-section" id="bestsellersSection">
+      <div class="bestsellers-header">
+        <h2 class="section-heading">Bestsellers from Across the Country</h2>
+      </div>
+
+      <!-- 4 Bestseller Cards Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Item 1: Rich Chocolate Truffle Cake -->
+        <article class="product-card" data-product-id="1" data-category="classic">
+          <button class="wishlist-btn" title="Add to Wishlist" aria-label="Add to Wishlist" onclick="window.dakingoApp.toggleWishlist(1, this)">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </button>
+          <div class="product-img-wrap" onclick="window.dakingoApp.quickViewItem(1)">
+            <img src="images/bestseller_truffle.jpg" alt="Rich Chocolate Truffle Cake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" onclick="window.dakingoApp.quickViewItem(1)">Rich Chroclate Truffle<br>Truffle Cake</h3>
+            <div class="product-price-row">
+              <span class="current-price">₹500</span>
+              <span class="old-price">₹600 (Save 17%)</span>
+            </div>
+            <div class="product-meta-row">
+              <div class="rating-stars" aria-label="5 stars rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                <span class="reviews-count">500</span>
+              </div>
+              <button class="add-cart-circle-btn" title="Add to Cart" aria-label="Add Rich Chocolate Truffle Cake to cart" onclick="window.dakingoApp.addToCart(1)">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 2: Choco Chip Truffle Cake -->
+        <article class="product-card" data-product-id="2" data-category="classic">
+          <button class="wishlist-btn" title="Add to Wishlist" aria-label="Add to Wishlist" onclick="window.dakingoApp.toggleWishlist(2, this)">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </button>
+          <div class="product-img-wrap" onclick="window.dakingoApp.quickViewItem(2)">
+            <img src="images/bestseller_choco_chip.jpg" alt="Choco Chip Truffle Cake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" onclick="window.dakingoApp.quickViewItem(2)">Choco Chip Truffle<br>Cake Cake</h3>
+            <div class="product-price-row">
+              <span class="current-price">₹589</span>
+              <span class="old-price">₹699 (Save 16%)</span>
+            </div>
+            <div class="product-meta-row">
+              <div class="rating-stars" aria-label="5 stars rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                <span class="reviews-count">350</span>
+              </div>
+              <button class="add-cart-circle-btn" title="Add to Cart" aria-label="Add Choco Chip Truffle Cake to cart" onclick="window.dakingoApp.addToCart(2)">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 3: Tropical Fruit N Almond Cake -->
+        <article class="product-card" data-product-id="3" data-category="gourmet">
+          <button class="wishlist-btn" title="Add to Wishlist" aria-label="Add to Wishlist" onclick="window.dakingoApp.toggleWishlist(3, this)">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </button>
+          <div class="product-img-wrap" onclick="window.dakingoApp.quickViewItem(3)">
+            <img src="images/bestseller_fruit_almond.jpg" alt="Tropical Fruit N Almond Cake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" onclick="window.dakingoApp.quickViewItem(3)">Tropical Fruit N Almond<br>Cake Cake</h3>
+            <div class="product-price-row">
+              <span class="current-price">₹599</span>
+              <span class="old-price">₹699 (Save 14%)</span>
+            </div>
+            <div class="product-meta-row">
+              <div class="rating-stars" aria-label="5 stars rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                <span class="reviews-count">368</span>
+              </div>
+              <button class="add-cart-circle-btn" title="Add to Cart" aria-label="Add Tropical Fruit N Almond Cake to cart" onclick="window.dakingoApp.addToCart(3)">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Item 4: Rich Butterscotch Crunch Cake -->
+        <article class="product-card" data-product-id="4" data-category="desserts">
+          <button class="wishlist-btn" title="Add to Wishlist" aria-label="Add to Wishlist" onclick="window.dakingoApp.toggleWishlist(4, this)">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </button>
+          <div class="product-img-wrap" onclick="window.dakingoApp.quickViewItem(4)">
+            <img src="images/bestseller_butterscotch.jpg" alt="Rich Butterscotch Crunch Cake">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title" onclick="window.dakingoApp.quickViewItem(4)">Rich Butterscotch Crunch<br>Cake Cake</h3>
+            <div class="product-price-row">
+              <span class="current-price">₹399</span>
+              <span class="old-price">₹499 (Save 20%)</span>
+            </div>
+            <div class="product-meta-row">
+              <div class="rating-stars" aria-label="5 stars rating">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                <span class="reviews-count">308</span>
+              </div>
+              <button class="add-cart-circle-btn" title="Add to Cart" aria-label="Add Rich Butterscotch Crunch Cake to cart" onclick="window.dakingoApp.addToCart(4)">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 10l5 5 5-5z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Right-aligned VIEW ALL button below the 4th card -->
+      <div class="bestsellers-action-row">
+        <button class="view-all-btn" id="viewAllBtn">VIEW ALL</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         OUR PROMISE SECTION
+         ========================================== -->
+    <section class="promise-section" id="promiseSection">
+      <div class="promise-heading-wrap">
+        <h2 class="promise-title">Our Promise</h2>
+        <p class="promise-subtitle">There's no secret spell – only honest hard work!</p>
+      </div>
+
+      <div class="promise-content-grid">
+        <!-- Left Column -->
+        <div class="promise-left-col">
+          <!-- Pink Badges Box -->
+          <div class="promise-badges-box">
+            <h3 class="badges-box-header">A glimpse into secret spell – only honest world!</h3>
+            <div class="promise-badges-row">
+              <!-- Badge 1: On Time Delivery -->
+              <div class="badge-item">
+                <div class="badge-icon-circle" title="On Time Delivery">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                  </svg>
+                </div>
+                <span class="badge-label">ON TIME<br>DELIVERY</span>
+              </div>
+
+              <!-- Badge 2: 5000+ Designs -->
+              <div class="badge-item">
+                <div class="badge-icon-circle" title="5000+ Unique Cake Designs">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M20 8h-3V4H7v4H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2zM9 6h6v2H9V6zm11 12H4v-7c0-.55.45-1 1-1h14c.55 0 1 .45 1 1v7z"/>
+                    <circle cx="8" cy="14" r="1.5"/>
+                    <circle cx="12" cy="14" r="1.5"/>
+                    <circle cx="16" cy="14" r="1.5"/>
+                  </svg>
+                </div>
+                <span class="badge-label">5000+<br>DESIGNS</span>
+              </div>
+
+              <!-- Badge 3: 2 CR+ Orders -->
+              <div class="badge-item">
+                <div class="badge-icon-circle" title="Over 2 Crore Celebrations Served">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                  </svg>
+                </div>
+                <span class="badge-label">2 CR+<br>ORDERS</span>
+              </div>
+
+              <!-- Badge 4: Baked Fresh -->
+              <div class="badge-item">
+                <div class="badge-icon-circle" title="100% Baked Fresh Everyday">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48l.84-7.44c.15-1.26-.8-2.39-2.07-2.39H3.88c-1.27 0-2.22 1.13-2.07 2.39l.84 7.44c.1.84.79 1.48 1.63 1.48h1.66M12 2v6m-4-4v4m8-4v4"/>
+                  </svg>
+                </div>
+                <span class="badge-label">BAKED<br>FRESH</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Magical Ticket Box -->
+          <div class="magical-ticket-card">
+            <div class="ticket-visual" id="ticketVisualBtn" title="Click to unlock ₹750 offer!">
+              <img src="images/ticket.svg" alt="The Magical Ticket ₹750 Off">
+            </div>
+            <div class="ticket-details">
+              <h3 class="ticket-title">THE MAGICAL TICKET</h3>
+              <p class="ticket-desc">Add 3 reminders in your account. Win offers worth Rs. 750</p>
+              <button class="unlock-now-btn" id="unlockTicketBtn">UNLOCK NOW</button>
+            </div>
+          </div>
+
+          <!-- Social Avatars Row -->
+          <div class="social-follow-strip">
+            <div class="avatar-stack">
+              <img src="images/avatar_1.svg" alt="Customer Avatar 1">
+              <img src="images/avatar_2.svg" alt="Customer Avatar 2">
+              <img src="images/avatar_3.svg" alt="Customer Avatar 3">
+              <img src="images/avatar_4.svg" alt="Customer Avatar 4">
+              <img src="images/avatar_5.svg" alt="Customer Avatar 5">
+            </div>
+            <span class="social-follow-text">Follow us on social!</span>
+          </div>
+        </div>
+
+        <!-- Right Column: 2x3 Bakery Photo Grid -->
+        <div class="promise-gallery-grid">
+          <!-- 1: Tiered White Celebration Cake -->
+          <div class="gallery-item" title="Handcrafted Celebration Cake">
+            <img src="images/promise_white_cake.jpg" alt="Masterpiece 2-tier white and gold celebration cake">
+            <div class="gallery-overlay-hint">Royal Celebration Cake</div>
+          </div>
+
+          <!-- 2: Happy Girl holding Cake -->
+          <div class="gallery-item" title="Happy Moments">
+            <img src="images/promise_girl_cake.jpg" alt="Smiling girl holding chocolate birthday cake with candles">
+            <div class="gallery-overlay-hint">Pure Joy & Birthday Smiles</div>
+          </div>
+
+          <!-- 3: Female Baker in Kitchen -->
+          <div class="gallery-item" title="Master Pastry Chefs">
+            <img src="images/promise_baker_woman.jpg" alt="Female baker expertly decorating fresh berry cake in professional bakery">
+            <div class="gallery-overlay-hint">Artisanal Craftsmanship</div>
+          </div>
+
+          <!-- 4: Two Bakers presenting Chocolate Cake -->
+          <div class="gallery-item" title="Passionate Team">
+            <img src="images/promise_two_bakers.jpg" alt="Two smiling bakers presenting freshly baked chocolate cake">
+            <div class="gallery-overlay-hint">Baked with Love</div>
+          </div>
+
+          <!-- 5: Two Bakers with Tall Pink Cake -->
+          <div class="gallery-item" title="Grand Cake Creations">
+            <img src="images/promise_bakers_tall_cake.jpg" alt="Two friendly bakers standing next to a 3-tier pink celebration cake">
+            <div class="gallery-overlay-hint">Signature Designer Cakes</div>
+          </div>
+
+          <!-- 6: Luxury Grand Wedding Cake -->
+          <div class="gallery-item" title="Luxury Weddings & Grand Occasions">
+            <img src="images/promise_wedding_cake.jpg" alt="Grand 4-tier luxury wedding cake with delicate sugar flowers">
+            <div class="gallery-overlay-hint">Grand Wedding Collection</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         FSSAI CERTIFICATION BANNER
+         ========================================== -->
+    <div class="trust-banner-wrap">
+      <div class="trust-banner">
+        <span class="trust-banner-icon" aria-hidden="true">🛡️</span>
+        <span>Dakingo – Your Trusted FSSAI Certified Online Bakery for Every Celebration</span>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         SITE FOOTER
+         ========================================== -->
+    <footer class="site-footer">
+      <div class="footer-top-columns">
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="#" class="footer-logo">Dakingo</a>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.showStoryModal()">Our Story</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.openHelpChat()">Contact Us</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.showToast('Outlets in Delhi, Mumbai, Bengaluru, Hyderabad')">Locaters / Outlets</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.showToast('Featured in Times Food & BBC Good Food')">Media</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.showToast('We are hiring! Send CV to careers@dakingo.com')">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Know Us -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">KNOW US</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.openHelpChat()">Contact Us</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.showToast('Latest Blog: The Secret of Chocolate Ganache')">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Need Help -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">NEED HELP</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.showPolicy('cancellation')">Cancellation And Refund</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.showPolicy('privacy')">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- More Info -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">MORE INFO</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.showPolicy('terms')">Terms And Policy</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.openHelpChat()">Customer Care</a></li>
+          </ul>
+        </div>
+
+        <!-- Download App / Offers -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">MORE INFO</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.openMagicalTicketModal()">Coupons & Offers</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="window.dakingoApp.showToast('Dakingo App available on iOS & Android!')">Download App</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Row: Newsletter Bar and Inline Help Button -->
+      <div class="footer-bottom-flex">
+        <form class="footer-newsletter-row" id="newsletterForm" onsubmit="event.preventDefault(); window.dakingoApp.handleNewsletter(this);">
+          <input type="email" required class="newsletter-input" placeholder="Enter Email Address" aria-label="Enter Email Address for Newsletter">
+          <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+        </form>
+
+        <div class="footer-inline-help" onclick="window.dakingoApp.openHelpChat()" title="Need assistance? Chat with us!">
+          <div class="help-circle-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </div>
+          <span class="help-inline-text">Hey, need any help?</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ==========================================
+       FLOATING HELP WIDGET BUTTON
+       ========================================== -->
+  <button class="floating-help-btn" id="floatingHelpBtn" aria-label="Customer Support">
+    <div class="help-icon-circle">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/>
+      </svg>
+    </div>
+    <span class="help-text">Hey, need any help?</span>
+  </button>
+
+  <!-- ==========================================
+       CART SLIDE DRAWER
+       ========================================== -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">Your Basket</h3>
+      <button class="modal-close-btn" id="closeCartBtn" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="cart-items-container" id="cartItemsList">
+      <!-- Items dynamically populated -->
+    </div>
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-calc-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotalText">₹0</span>
+      </div>
+      <div class="cart-calc-row" id="cartDiscountRow" style="display:none; color: #2e7d32;">
+        <span>Promo Discount (20%)</span>
+        <span id="cartDiscountText">-₹0</span>
+      </div>
+      <div class="cart-calc-row">
+        <span>Delivery</span>
+        <span style="color: #2e7d32; font-weight: 700;">FREE</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Total Payable</span>
+        <span id="cartTotalText">₹0</span>
+      </div>
+      <button class="checkout-btn" id="cartCheckoutBtn">PROCEED TO ORDER</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       MODAL: ORDER NOW / CHECKOUT
+       ========================================== -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="window.dakingoApp.closeModal('orderModal')">&times;</button>
+      <h3 style="color: var(--primary-red); font-size: 20px; font-weight: 800; margin-bottom: 4px;">Complete Your Order</h3>
+      <p style="font-size: 11.5px; color: #6e5754; margin-bottom: 16px;">Freshly baked & delivered with utmost care.</p>
+      
+      <form id="orderForm" onsubmit="event.preventDefault(); window.dakingoApp.submitOrder(this);">
+        <div class="form-group">
+          <label class="form-label">Delivery Pincode / City</label>
+          <input type="text" required class="form-input" placeholder="e.g. 110001, New Delhi" value="110001 (Connaught Place)">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div class="form-group">
+            <label class="form-label">Delivery Date</label>
+            <input type="date" required class="form-input" id="deliveryDateInput">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Delivery Time Slot</label>
+            <select class="form-select">
+              <option>Standard (9:00 AM - 1:00 PM)</option>
+              <option selected>Afternoon (1:00 PM - 5:00 PM)</option>
+              <option>Evening (5:00 PM - 9:00 PM)</option>
+              <option>Midnight Special (11:00 PM - 12:00 AM)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message on Cake (Complimentary)</label>
+          <input type="text" class="form-input" placeholder="e.g. Happy Birthday Sarah! ❤️" maxlength="35">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Recipient Name & Contact Phone</label>
+          <input type="text" required class="form-input" placeholder="John Doe - +91 98765 43210">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Complete Delivery Address</label>
+          <textarea required class="form-input" rows="2" placeholder="House / Flat No, Street, Landmark..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Payment Method</label>
+          <select class="form-select" id="paymentMethodSelect">
+            <option>UPI / Google Pay / PhonePe (Instant confirmation)</option>
+            <option>Credit / Debit Card (Visa, Mastercard, RuPay)</option>
+            <option>Cash on Delivery (Pay upon arrival)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary-block" id="confirmOrderSubmitBtn">CONFIRM & PLACE ORDER 🎂</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: PRODUCT QUICK VIEW
+       ========================================== -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-container" style="max-width: 540px;">
+      <button class="modal-close-btn" onclick="window.dakingoApp.closeModal('quickViewModal')">&times;</button>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+        <div style="border-radius: 14px; overflow: hidden; background: #FAF2EC;">
+          <img id="qvProductImg" src="" alt="Cake Preview" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;">
+        </div>
+        <div>
+          <span style="font-size: 10px; font-weight: 800; color: #2e7d32; background: #E8F5E9; padding: 2px 8px; border-radius: 4px; text-transform: uppercase;">100% Freshly Baked</span>
+          <h3 id="qvProductTitle" style="color: var(--primary-red); font-size: 16px; font-weight: 800; margin: 6px 0 4px; line-height: 1.3;">Cake Name</h3>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px;">
+            <span id="qvProductPrice" style="font-size: 18px; font-weight: 800; color: var(--primary-red);">₹500</span>
+            <span id="qvProductOldPrice" style="font-size: 12px; color: #A38C87; text-decoration: line-through;">₹600</span>
+          </div>
+
+          <label class="form-label">Choose Cake Size / Weight:</label>
+          <div style="display: flex; gap: 6px; margin-bottom: 12px;" id="qvWeightSelector">
+            <button type="button" class="order-now-btn" style="padding: 5px 12px; font-size: 10px;" onclick="window.dakingoApp.selectWeight(0.5, this)">0.5 Kg</button>
+            <button type="button" class="order-now-btn" style="padding: 5px 12px; font-size: 10px; background: #FFF0EB; color: var(--primary-red);" onclick="window.dakingoApp.selectWeight(1.0, this)">1.0 Kg</button>
+            <button type="button" class="order-now-btn" style="padding: 5px 12px; font-size: 10px; background: #FFF0EB; color: var(--primary-red);" onclick="window.dakingoApp.selectWeight(2.0, this)">2.0 Kg</button>
+          </div>
+
+          <label class="form-label">Dietary Preference:</label>
+          <div style="display: flex; gap: 10px; margin-bottom: 12px; font-size: 11px;">
+            <label style="display: flex; align-items: center; gap: 4px; cursor: pointer;">
+              <input type="radio" name="qvDiet" checked> 100% Eggless 🟢
+            </label>
+            <label style="display: flex; align-items: center; gap: 4px; cursor: pointer;">
+              <input type="radio" name="qvDiet"> Contains Egg 🔴
+            </label>
+          </div>
+
+          <button type="button" class="btn-primary-block" id="qvAddToCartBtn" onclick="window.dakingoApp.addQuickViewToCart()">ADD TO BASKET</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: THE MAGICAL TICKET (Reminder & ₹750)
+       ========================================== -->
+  <div class="modal-overlay" id="ticketModal">
+    <div class="modal-container" style="text-align: center;">
+      <button class="modal-close-btn" onclick="window.dakingoApp.closeModal('ticketModal')">&times;</button>
+      <div style="width: 80px; margin: 0 auto 10px;">
+        <img src="images/ticket.svg" alt="Golden Magical Ticket" style="width: 100%;">
+      </div>
+      <h3 style="color: var(--primary-red); font-size: 20px; font-weight: 900; text-transform: uppercase;">THE MAGICAL TICKET</h3>
+      <p style="font-size: 12px; color: #6E5754; margin: 4px 0 16px;">
+        Add 3 celebration dates to never forget a loved one's special day and instantly receive a <strong>₹750 Gift Voucher</strong>!
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; text-align: left; margin-bottom: 16px;">
+        <div>
+          <label class="form-label">1. Mother's / Father's Birthday</label>
+          <input type="date" class="form-input" value="2026-11-20" id="remDate1">
+        </div>
+        <div>
+          <label class="form-label">2. Anniversary / Partner's Birthday</label>
+          <input type="date" class="form-input" value="2026-12-15" id="remDate2">
+        </div>
+        <div>
+          <label class="form-label">3. Best Friend's Birthday</label>
+          <input type="date" class="form-input" value="2027-01-10" id="remDate3">
+        </div>
+      </div>
+
+      <button class="btn-primary-block" id="claimTicketBtn" onclick="window.dakingoApp.claimTicketReward()">SAVE REMINDERS & UNLOCK ₹750 🎉</button>
+
+      <div id="ticketSuccessBox" style="display: none; margin-top: 14px; background: #FFF9ED; border: 1.5px dashed #FFA000; padding: 14px; border-radius: 12px;">
+        <span style="font-size: 11px; font-weight: 700; color: #8D1D24;">VOUCHER UNLOCKED!</span>
+        <div style="font-size: 20px; font-weight: 900; color: #8D1D24; letter-spacing: 2px; margin: 4px 0;">MAGIC750</div>
+        <p style="font-size: 11px; color: #6E5754;">Copied to your clipboard! Applied automatically on orders over ₹1200.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: LOGIN / SIGNUP
+       ========================================== -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-container" style="max-width: 420px;">
+      <button class="modal-close-btn" onclick="window.dakingoApp.closeModal('authModal')">&times;</button>
+      <h3 style="color: var(--primary-red); font-size: 20px; font-weight: 800; margin-bottom: 4px;">Welcome to Dakingo</h3>
+      <p style="font-size: 12px; color: #6E5754; margin-bottom: 18px;">Track orders, earn baker rewards & save celebrations.</p>
+
+      <div style="display: flex; border-bottom: 1.5px solid #F0DCD4; margin-bottom: 16px;">
+        <button type="button" id="authTabLogin" class="nav-item active" style="flex: 1; padding: 8px; border: none; background: none; font-weight: 700; color: var(--primary-red); cursor: pointer;" onclick="window.dakingoApp.switchAuthTab('login')">Login</button>
+        <button type="button" id="authTabSignup" style="flex: 1; padding: 8px; border: none; background: none; font-weight: 700; color: #9E8587; cursor: pointer;" onclick="window.dakingoApp.switchAuthTab('signup')">Sign Up</button>
+      </div>
+
+      <form id="authForm" onsubmit="event.preventDefault(); window.dakingoApp.submitAuth(this);">
+        <div class="form-group" id="nameFieldGroup" style="display: none;">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" id="authNameInput" placeholder="e.g. Rahul Sharma">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email or Mobile Number</label>
+          <input type="text" required class="form-input" id="authEmailInput" placeholder="name@example.com or 9876543210">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" required class="form-input" id="authPasswordInput" placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn-primary-block" id="authSubmitBtn">LOG IN</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: CUSTOMER SUPPORT / HELP CHAT
+       ========================================== -->
+  <div class="modal-overlay" id="helpModal">
+    <div class="modal-container" style="max-width: 440px;">
+      <button class="modal-close-btn" onclick="window.dakingoApp.closeModal('helpModal')">&times;</button>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+        <div class="help-icon-circle">🍰</div>
+        <div>
+          <h3 style="color: var(--primary-red); font-size: 16px; font-weight: 800;">Dakingo Concierge</h3>
+          <span style="font-size: 10.5px; color: #2e7d32; font-weight: 600;">● Online | Typical reply in 2 min</span>
+        </div>
+      </div>
+
+      <div style="background: #FDF7F3; border-radius: 12px; padding: 14px; margin-bottom: 14px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="background: #FFFFFF; padding: 10px 14px; border-radius: 12px 12px 12px 2px; font-size: 12px; color: var(--text-main); border: 1px solid #F0DCD4;">
+          Hello! 👋 Welcome to Dakingo. How can our pastry team assist you today?
+        </div>
+        <div id="chatHistoryBox" style="display: flex; flex-direction: column; gap: 6px;"></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <button class="category-card" style="padding: 8px 12px; font-size: 11px; text-align: left; align-items: flex-start;" onclick="window.dakingoApp.sendChatQuery('Can I order a customized theme cake?')">
+          🎂 Can I order a customized theme cake?
+        </button>
+        <button class="category-card" style="padding: 8px 12px; font-size: 11px; text-align: left; align-items: flex-start;" onclick="window.dakingoApp.sendChatQuery('Do you offer Midnight Delivery?')">
+          🌙 Do you offer Midnight Delivery?
+        </button>
+        <button class="category-card" style="padding: 8px 12px; font-size: 11px; text-align: left; align-items: flex-start;" onclick="window.dakingoApp.sendChatQuery('Are all your cakes 100% Eggless?')">
+          🟢 Are all your cakes 100% Eggless?
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

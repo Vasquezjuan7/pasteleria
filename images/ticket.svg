@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 140" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ticketGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="30%" stop-color="#FFD54F"/>
+      <stop offset="70%" stop-color="#FFC107"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </linearGradient>
+    <linearGradient id="ticketInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8E1"/>
+      <stop offset="100%" stop-color="#FFE082"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#8B1E22" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Confetti sprinkles -->
+  <g opacity="0.85">
+    <path d="M 25 18 Q 30 10 38 16" stroke="#E53935" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 18 35 Q 26 30 22 42" stroke="#3949AB" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 45 30 Q 52 22 58 28" stroke="#43A047" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <circle cx="16" cy="22" r="3" fill="#FB8C00"/>
+    <circle cx="48" cy="14" r="2.5" fill="#8E24AA"/>
+    <circle cx="38" cy="46" r="3" fill="#E53935"/>
+    <polygon points="56,42 58,47 63,48 59,52 60,57 56,54 51,56 53,51 49,47 54,47" fill="#FDD835"/>
+    <polygon points="28,8 29,11 32,12 30,14 30,17 28,15 25,16 26,13 24,11 27,11" fill="#FF8F00"/>
+  </g>
+
+  <!-- Angled Golden Ticket -->
+  <g transform="rotate(-14 110 75)" filter="url(#shadow)">
+    <!-- Main Ticket Body -->
+    <path d="M 45 42 
+             H 165 
+             A 10 10 0 0 1 175 52 
+             V 62 
+             A 9 9 0 0 0 175 80 
+             V 90 
+             A 10 10 0 0 1 165 100 
+             H 45 
+             A 10 10 0 0 1 35 90 
+             V 80 
+             A 9 9 0 0 0 35 62 
+             V 52 
+             A 10 10 0 0 1 45 42 Z" 
+          fill="url(#ticketGold)" stroke="#FFA000" stroke-width="1.5"/>
+
+    <!-- Inner Dashed Border -->
+    <path d="M 47 46 
+             H 163 
+             A 6 6 0 0 1 169 52 
+             V 60 
+             A 12 12 0 0 0 169 82 
+             V 90 
+             A 6 6 0 0 1 163 96 
+             H 47 
+             A 6 6 0 0 1 41 90 
+             V 82 
+             A 12 12 0 0 0 41 60 
+             V 52 
+             A 6 6 0 0 1 47 46 Z" 
+          fill="url(#ticketInner)" stroke="#D87A00" stroke-width="1.2" stroke-dasharray="3,3"/>
+
+    <!-- Perforation line -->
+    <line x1="72" y1="46" x2="72" y2="96" stroke="#B26A00" stroke-width="1.2" stroke-dasharray="2,3"/>
+
+    <!-- Stub Star -->
+    <polygon points="56,66 58,70 63,71 59,74 60,79 56,76 52,79 53,74 49,71 54,70" fill="#E65100"/>
+
+    <!-- Text on Ticket -->
+    <text x="82" y="65" font-family="'Poppins', sans-serif" font-size="9" font-weight="800" fill="#8D1D24" letter-spacing="1">SPECIAL</text>
+    <text x="82" y="78" font-family="'Poppins', sans-serif" font-size="12" font-weight="900" fill="#B71C1C" letter-spacing="1.5">TICKET</text>
+    <text x="82" y="90" font-family="'Poppins', sans-serif" font-size="8" font-weight="700" fill="#E65100">₹750 OFF</text>
+  </g>
+</svg>
